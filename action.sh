@@ -22,7 +22,7 @@ sleep_pause() {
 }
 
 if [ -z "$(command -v KmInstallKeybox)" ]; then
-	echo "!!! Error: KmInstallKeybox not found."
+	echo "!!! Error: KmInstallKeybox is not found."
 	sleep_pause
 	exit 1
 fi
@@ -63,7 +63,7 @@ write() {
 	echo "******************************************************"
 	echo "--- $(date '+%Y-%m-%dT%H:%M:%S') ---"
 	echo "------------------------------------------------------"
-	echo "LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox \"$TEE_Keybox_file\" \"$TEE_Device_ID\" true $RKP"
+	LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox "$TEE_Keybox_file" "$TEE_Device_ID" true $RKP
 	echo " "
 }
 
