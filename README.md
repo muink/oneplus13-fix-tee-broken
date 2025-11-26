@@ -53,12 +53,24 @@ Advanced users may inject a custom Keybox into the TEE.
 > [!NOTE]\
 > The written keybox only exists when the bootloader is unlocked. Re-locking bootloader will switch to the factory keybox.
 
-## 4. References and Acknowledgements
+## 4. Check if successful
+
+- View the log of this operation: `/data/adb/modules/oneplus13-fix-tee-broken/log.txt`
+- Check key ststus
+  1. Find ‘Dial-up’ on the desktop and open it.
+  2. Type ‘*#899#’.​
+  3. Click ‘Manual Test’.​
+  4. Slide the top bar to the far right and click ‘Other’.​
+  5. Click ‘Key Status’.​
+  6. Check if all/most the keys except ‘SOTER key’ are green​ [png](https://xdaforums.com/attachments/get-widevine-l1-using-attestation-png.6221981/)
+
+## 5. References and Acknowledgements
 
 This project references research and methods documented in the following source:
 
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)\
 [Fix Widevine L1 unlocked bootloader](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/)\
 [InstallKeybox](https://github.com/Sushrut1101/android_vendor_qcom_proprietary/blob/master/securemsm/keymaster_install_toolbox/InstallKeybox.cpp#L426)
+
 
 
