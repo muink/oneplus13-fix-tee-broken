@@ -50,9 +50,13 @@ Advanced users may inject a custom Keybox into the TEE.
 > If the write operation fails during re-execution, it may be necessary to restore the `persist` partition
 > from your backup before retrying. (Untested, insufficient sample size, probability questionable)
 
+> [!NOTE]\
+> The written keybox only exists when the bootloader is unlocked. Re-locking bootloader will switch to the factory keybox.
+
 ## 4. References and Acknowledgements
 
 This project references research and methods documented in the following source:
 
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)
+
 
