@@ -58,5 +58,7 @@ Advanced users may inject a custom Keybox into the TEE.
 This project references research and methods documented in the following source:
 
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)\
-[Fix Widevine L1 unlocked bootloader](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/)
+[Fix Widevine L1 unlocked bootloader](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/)\
+[InstallKeybox](https://github.com/Sushrut1101/android_vendor_qcom_proprietary/blob/master/securemsm/keymaster_install_toolbox/InstallKeybox.cpp#L426)
+
 
