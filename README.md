@@ -7,8 +7,8 @@
 PLEASE READ CAREFULLY BEFORE PROCEEDING.
 
 > [!WARNING]\
-> Non-Systemless Operation: This module is NOT systemless. It performs permanent modifications to your device's partitions. These changes persist even after the module is uninstalled.
-> Risk of Damage: The operations performed by this module carry inherent risks. Improper use or unexpected errors may damage the device or cause it to malfunction.
+> Non-Systemless Operation: This module is NOT systemless. It performs permanent modifications to your device's partitions. These changes persist even after the module is uninstalled.\
+> Risk of Damage: The operations performed by this module carry inherent risks. Improper use or unexpected errors may damage the device or cause it to malfunction.\
 > Liability: By using this module, you acknowledge and accept these risks. The author(s) and contributors of this project assume no liability for any damage to your device, loss of data, or voiding of warranties resulting from the use of this software.
 
 ## 1. Prerequisites
@@ -44,7 +44,7 @@ Advanced users may inject a custom Keybox into the TEE.
    - Note: Do not use a Keybox that has been revoked or is at high risk of revocation by Google.
 2. Placement: Copy your keybox file to the following directory on the device:
    - `/data/adb/modules/oneplus13-fix-tee-broken/keybox.xml`
-2. Re-execution: Re-run the module execution (refer to step 3.8).
+2. Re-execution: Re-run the module execution (refer to step 2.8).
 
 > [!NOTE]\
 > If the write operation fails during re-execution, it may be necessary to restore the `persist` partition
@@ -55,3 +55,4 @@ Advanced users may inject a custom Keybox into the TEE.
 This project references research and methods documented in the following source:
 
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)
+
