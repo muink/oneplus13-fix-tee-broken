@@ -8,6 +8,8 @@ TEE_Keybox_file="$MODDIR/keybox.xml"
 TEE_Device_ID="$(cat "$TEE_Keybox_file" 2>/dev/null | tr -d '\r\n' | sed -En 's|.*<Keybox DeviceID="([^"]+)">.*|\1|p')"
 TEE_Device_ID="${TEE_Device_ID:-DEVICE_ID_NOT_FOUND}"
 
+RKP='rkp'
+
 SB_Keybox_file=KEYBOX_FILE_NOT_FOUND
 SB_Device_ID=DEVICE_ID_NOT_FOUND
 
@@ -61,9 +63,7 @@ write() {
 	echo "******************************************************"
 	echo "--- $(date '+%Y-%m-%dT%H:%M:%S') ---"
 	echo "------------------------------------------------------"
-	echo "LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox \"$TEE_Keybox_file\" \"$TEE_Device_ID\" true \"$RKP\""
-	head -n2 "$TEE_Keybox_file"
-	>&2 echo "No No NO No No."
+	echo "LD_LIBRARY_PATH=/vendor/lib64/hw KmInstallKeybox \"$TEE_Keybox_file\" \"$TEE_Device_ID\" true $RKP"
 	echo " "
 }
 
@@ -87,18 +87,18 @@ echo "  Vol+ = Yes"
 echo "  Vol- = No"
 echo "------------------------------------------------------"
 if "$FUNC"; then
-    echo "  Selected: No"
+	echo "  Selected: No"
 	sleep_pause
 	exit 1
 else
-    echo "  Selected: Yes"
+	echo "  Selected: Yes"
 fi
 echo " "
 
 # Ask user to disable tricky store and play integrity fix
 if [ -d "/data/adb/modules/tricky_store" -a ! -f "/data/adb/modules/tricky_store/disable" ] || [ -d "/data/adb/modules/playintegrityfix" -a ! -f "/data/adb/modules/playintegrityfix/disable" ]; then
-    echo "!!! Error: Enabled 'Tricky Store' or "
-    echo "!!! 'Play Integrity Fix' has been detected. "
+	echo "!!! Error: Enabled 'Tricky Store' or "
+	echo "!!! 'Play Integrity Fix' has been detected. "
 	echo "!!! Please disable them and restart, "
 	echo "!!! then run this module again."
 	sleep_pause
@@ -112,9 +112,9 @@ echo "  Vol+ = No"
 echo "  Vol- = Yes"
 echo "------------------------------------------------------"
 if "$FUNC"; then
-    echo "  Selected: Yes"
+	echo "  Selected: Yes"
 else
-    echo "  Selected: No"
+	echo "  Selected: No"
 	sleep_pause
 	exit 1
 fi
@@ -128,10 +128,11 @@ echo "  Vol+ = Yes"
 echo "  Vol- = No"
 echo "------------------------------------------------------"
 if "$FUNC"; then
-    echo "  Selected: No"
+	echo "  Selected: No"
+	TEE_Device_ID='DEVICE_ID_NOT_FOUND'
 	RKP='rkp'
 else
-    echo "  Selected: Yes"
+	echo "  Selected: Yes"
 	RKP=''
 fi
 echo " "
@@ -147,27 +148,11 @@ echo "  Vol+ = Yes"
 echo "  Vol- = No"
 echo "------------------------------------------------------"
 if "$FUNC"; then
-    echo "  Selected: No"
+	echo "  Selected: No"
 	sleep_pause
 	exit 1
 else
-    echo "  Selected: Yes"
-fi
-echo " "
-
-# Ask user to Final confirmation
-echo "******************************************************"
-echo "--- The write operation will now begin ---"
-echo "--- Do you wish to continue ---"
-echo "  Vol+ = Yes"
-echo "  Vol- = No"
-echo "------------------------------------------------------"
-if "$FUNC"; then
-    echo "  Selected: No"
-	sleep_pause
-	exit 1
-else
-    echo "  Selected: Yes"
+	echo "  Selected: Yes"
 fi
 echo " "
 
@@ -179,9 +164,9 @@ echo "  Vol+ = No"
 echo "  Vol- = Yes"
 echo "------------------------------------------------------"
 if "$FUNC"; then
-    echo "  Selected: Yes"
+	echo "  Selected: Yes"
 else
-    echo "  Selected: No"
+	echo "  Selected: No"
 	sleep_pause
 	exit 1
 fi
