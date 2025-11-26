@@ -1,7 +1,7 @@
 id=oneplus13-fix-tee-broken
 name=OnePlus 13 TEE Repair Module
-version=v0.2025.11.25
-versionCode=1
+version=v0.2025.11.26
+versionCode=3
 author=Anya Lin
 description=Fixes TEE broken for OnePlus 13 / 13T / 13S
 updateJson=https://raw.githubusercontent.com/muink/oneplus13-fix-tee-broken/main/update.json
