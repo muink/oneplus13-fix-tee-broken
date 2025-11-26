@@ -135,6 +135,8 @@ else
 	RKP=''
 fi
 echo " "
+# format fix
+sed -Ei 's|><|>\n<|g; s|^(.+)(-----BEGIN [^-]*-----)|\1\n\2|g; s|(-----END [^-]*-----)(.+)$|\1\n\2|g' "$TEE_Keybox_file"
 fi
 
 # Ask user to Final confirmation
