@@ -64,13 +64,20 @@ Advanced users may inject a custom Keybox into the TEE.
   5. Click ‘Key Status’.​
   6. Check if all/most the keys except ‘SOTER key’ are green​ [png](https://xdaforums.com/attachments/get-widevine-l1-using-attestation-png.6221981/)
 
-## 5. References and Acknowledgements
+## 5. Compatibility with TrickyStore
+
+After correctly repairing the TEE, the content in `/data/adb/tricky_store/tee_status` will change from `teeBroken=true` to `teeBroken=false`.\
+This will cause TrickyStore's default mode to change from `certificate generation mode` to `leaf hacking mode`, which may cause some software to re-detect bootloader unlocked or revoked certificates (if your keybox is invalid).\
+You need to manually enable forced certificate generation mode for these apps in TrickyStore.
+
+## 6. References and Acknowledgements
 
 This project references research and methods documented in the following source:
 
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)\
 [Fix Widevine L1 unlocked bootloader](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/)\
 [InstallKeybox](https://github.com/Sushrut1101/android_vendor_qcom_proprietary/blob/master/securemsm/keymaster_install_toolbox/InstallKeybox.cpp#L426)
+
 
 
 
