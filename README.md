@@ -11,6 +11,11 @@ PLEASE READ CAREFULLY BEFORE PROCEEDING.
 > Risk of Damage: The operations performed by this module carry inherent risks. Improper use or unexpected errors may damage the device or cause it to malfunction.\
 > Liability: By using this module, you acknowledge and accept these risks. The author(s) and contributors of this project assume no liability for any damage to your device, loss of data, or voiding of warranties resulting from the use of this software.
 
+> [!NOTE]\
+> A more secure   provision_device_ids  utility is available.
+> You need to enter the command manually.
+> Source: https://gist.github.com/Beransnow/95e7388c7871e1df697c52e5bb128fa1#file-provision_device_ids-c-L420-L429
+
 ## 1. Prerequisites
 
 - Supported Devices: OnePlus 13, OnePlus 13T, OnePlus 13S.
@@ -77,8 +82,5 @@ This project references research and methods documented in the following source:
 [一加13/15使用KmInstallKeybox修复attestation key+widevine RKP+attestation RKP测试](https://wuxianlin.com/2025/11/12/oneplus-13-15-attestation-rkp-test/)\
 [Fix Widevine L1 unlocked bootloader](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/)\
 [InstallKeybox](https://github.com/Sushrut1101/android_vendor_qcom_proprietary/blob/master/securemsm/keymaster_install_toolbox/InstallKeybox.cpp#L426)
-
-
-
-
-
+[Standalone Device ID provisioning utility for Qualcomm Keymaster](https://gist.github.com/MhmRdd/6c4256f4853674c6e330793138f93eb1)
+[Standalone Device ID provisioning utility for Qualcomm Keymaster usage](https://t.me/welikeandroid/23928)
